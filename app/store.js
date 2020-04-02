@@ -1,7 +1,9 @@
 import Gif from "./Models/Gif.js";
 
 let _state = {
-  activeGif: new Gif({ title: "Gif" }),
+  /**@type {Gif} */
+  // @ts-ignore
+  activeGif: {},
   /** @type {Gif[]} */
   gifs: []
 };

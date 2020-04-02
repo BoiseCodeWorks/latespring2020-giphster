@@ -7,6 +7,13 @@ export default class Gif {
     }
 
     get Template() {
-        return `<p>${this.title}</p>`
+        return `<img src="${this.img}" onclick="app.gifController.viewGifDetails('${this.id}')"/>`
     }
+
+    get animatedTemplate() {
+        return `
+        <iframe class="h-100 w-100" src="${this.embed_url}"></iframe>
+        `
+    }
+
 }

@@ -8,6 +8,14 @@ let _gifApi = axios.create({
 })
 
 class GifService {
+  viewGifDetails(gifId) {
+    let foundGif = store.State.gifs.find(gif => gif.id == gifId)
+    if (foundGif) {
+      store.commit("activeGif", foundGif)
+      console.log(store.State)
+    }
+  }
+
   constructor() {
     console.log("service works")
     this.getTrendingGifs()
@@ -22,6 +30,7 @@ class GifService {
       })
       .catch(err => console.error(err))
   }
+
   getSearchGifs(query) {
     _gifApi.get('search?api_key=grYySbfMe8NYXB4TuX6n3pPNbwok4ndS&rating=g&q=' + query)
     let queryParams = {

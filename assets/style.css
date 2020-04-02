@@ -1,1 +1,11 @@
 /* Styles */
+img{
+  height: 300px;
+
+}
+
+.scroll-area{
+  max-height: 90vh;
+  overflow-y: scroll;
+  scrollbar-width: 0px;
+}
